@@ -1,0 +1,35 @@
+
+
+type xapi_event {
+	id: String
+	result: xapi_result
+}
+
+type xapi_result {
+	completion: Boolean
+	success: Boolean
+	duration: String
+	score: score
+}
+
+type score {
+	scaled: Int
+	min: Int
+	max: Int
+}
+
+type AssignmentProgressReport {
+	teaching_group_name: String
+	assignment_results: [AssignmentResult]
+}
+
+type AssignmentResult {
+	assignment_name: String
+	student_results: [StudentResult]
+}
+
+type StudentResult {
+	student_name: String
+	absence_days: Int
+	result_event: xapi_event
+}

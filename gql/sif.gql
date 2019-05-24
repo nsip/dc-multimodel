@@ -1,0 +1,75 @@
+
+type StaffPersonal {
+	RefId: String
+	LocalId: String
+	EmploymentStatus: String
+	PersonInfo: PersonInfo
+}
+
+type PersonInfo {
+	Name: Name
+	Demographics: Demographics
+}
+
+type Name {
+	Type: String
+	FamilyName: String
+	GivenName: String
+}
+
+type Demographics {
+	Sex: String
+}
+
+type TeachingGroup {
+	RefId: String
+	SchoolYear: String
+    LocalId: String
+    ShortName: String
+    LongName: String
+    TimeTableSubjectRefId: String
+    StudentList: StudentList
+    TeacherList: TeacherList
+    TeachingGroupPeriodList: TeachingGroupPeriodList
+}
+
+type StudentList {
+	TeachingGroupStudent: [TeachingGroupStudent]
+}
+
+type TeachingGroupStudent {
+    StudentPersonalRefId: String
+    StudentLocalId: String
+    Name: Name
+}
+
+type TeacherList {
+	TeachingGroupTeacher: [TeachingGroupTeacher]
+}
+
+type TeachingGroupTeacher {
+	StaffPersonalRefId: String
+	StaffLocalId: String
+	Name: Name
+	Association: String
+}
+
+type TeachingGroupPeriodList {
+	TeachingGroupPeriod: [TeachingGroupPeriod]
+}
+
+type TeachingGroupPeriod {
+	RoomNumber: String
+	DayId: String
+	PeriodId: String
+}
+
+
+type StudentPersonal {
+	RefId: String	
+}
+
+
+
+
+

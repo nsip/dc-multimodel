@@ -1,0 +1,11 @@
+
+
+
+
+type progress {
+	teachers: [StaffPersonal]
+	my_teaching_groups(teacher_id: String!): [TeachingGroup]
+	reports(teaching_group_id: String!): [AssignmentProgressReport]
+}
+
+
